@@ -25,7 +25,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource{
   Future<List<CategoryModel>> fetchDishesAndCategory() async {
     try{
       List<CategoryModel> category=[];
-      const String apiUrl ="https://run.mocky.io/v3/18e8dae4-f39d-46bc-9cf6-9f8b97c32f9c";
+      const String apiUrl ="https://run.mocky.io/v3/2755438e-9d7c-41da-b20e-ce9010b8134e";
       final response = await http.get(Uri.parse(apiUrl));
 
       if (response.statusCode == 200) {
@@ -37,7 +37,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource{
 
        return category;
       } else {
-        throw const ServerException( message: 'Failed to load videos');
+        throw "Api not Found!";
       }
     }catch (e) {
 
@@ -49,8 +49,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource{
   @override
   Future<StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>> getUserCart({required String id,}) async{
   try{
-    print(id);
-    print("DSAAAAAAAAAAAAAAA");
+
     return firestore.collection(FirebaseConstants.userCollection).doc(id).snapshots().listen((event) {
     });
   }on FirebaseException catch(e){

@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                           return ScaleTransition(
                             alignment: Alignment.topRight,
                             scale: animation,
-                            child: CartPage(cart: user?.cart??[]),
+                            child: CartPage(userId: user?.id??""),
                           );
                         }
                     ));
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                       pageBuilder: (context, animation, secondaryAnimation) {
                         return ScaleTransition(
                           scale: animation,
-                          child: CartPage(cart: user?.cart??[]),
+                          child: CartPage(userId: user?.id??"",key: UniqueKey(),),
                         );
                       }
                   ));

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zartek_task/core/utils/show_addons_popup.dart';
 import 'package:zartek_task/feature/home/data/model/category_data_model.dart';
 import 'package:zartek_task/feature/home/presentation/bloc/home_bloc.dart';
 class DishesWidget extends StatefulWidget {
@@ -114,7 +115,9 @@ class _DishesWidgetState extends State<DishesWidget> {
                 SizedBox(
                   height: height*0.01,
                 ),
-                widget.dish.addons.isEmpty?const SizedBox():Text("Customizations Available",style: TextStyle(color: Colors.red,fontSize: width*0.04),),
+                widget.dish.addons.isEmpty?const SizedBox():GestureDetector(
+                  onTap: () => showAddonPoPup(context: context, width: width, height: height, addons: widget.dish.addons),
+                    child: Text("Customizations Available",style: TextStyle(color: Colors.red,fontSize: width*0.04),)),
                 SizedBox(
                   height: height*0.01,
                 ),
