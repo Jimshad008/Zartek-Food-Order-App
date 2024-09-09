@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
-import 'package:zartek_task/feature/auth/data/model/user_data_model.dart';
 import 'package:zartek_task/feature/home/domain/usecase/add_remove_update_item_to_cart.dart';
 import 'package:zartek_task/feature/home/domain/usecase/fetch_dishes_and_category.dart';
 import 'package:zartek_task/feature/home/domain/usecase/get_user_cart.dart';

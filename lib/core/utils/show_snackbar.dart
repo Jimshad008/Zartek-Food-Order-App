@@ -6,7 +6,7 @@ void showSnackBar(BuildContext context, String content) {
     ..showSnackBar(
       SnackBar(
         backgroundColor: const Color(0xFF1A3F14),
-        content: Text(content,style: TextStyle(color: Colors.white)),
+        content: Text(content,style: const TextStyle(color: Colors.white)),
       ),
     );
 }
